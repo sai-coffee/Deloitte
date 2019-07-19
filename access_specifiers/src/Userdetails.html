@@ -1,0 +1,123 @@
+<html>
+<head>
+<script>
+function validate()
+{ 
+var usern = document.getElementById("username").value;
+var passn = document.getElementById("password").value;
+var errUsername = document.getElementById("errUsername");
+var errPassword = document.getElementById("errPassword");
+var successMessage = document.getElementById("Successmessage");
+
+if(usern.length==0)
+	{
+	errUsername.innerHTML="<font color = blue>Please enter the name to proceed</font>";
+	return false;
+	}
+ if(passn.length<6 ) 
+	{ errUsername.innerHTML ="";
+		errPassword.innerHTML=  "<font color = blue>Password is too small</font>";
+		return false;
+	}
+ else if (passn.length>=6)
+{	errUsername.innerHTML ="";
+	errPassword.innerHTML= "<font color = green>Password is valid</font>";
+	
+
+ }
+ 
+ else if (usern.length!=0 && passn.length>6)
+	 {
+	 successMessage.innerHTML="<font color = green>Both are valid</font>";
+	 }
+	 
+
+if (usern.length==0||passn.length==0)
+	{
+	alert("Please enter the name to proceed");
+	}
+else
+	{
+	alert("Most Welcome: " +usern);
+	
+	}
+}
+</script>
+<center>
+WELCOME TO DELOITTE
+</center>
+</head>
+
+<body bgcolor="white">
+<center> <form action = "success.html" onsubmit = " return validate()"></center>
+
+<form>
+<table cellspacing = "10" cellpadding = "10" align = "center">
+<tr><td>Username</td><td><input type = "text" id = "username" name="customer" ></td>
+<td>
+<span id ="errUsername"> 
+</span></td>
+</tr>
+<tr><td>Password</td><td><input type = "password" id = "password" name="password"></td>
+<td>
+<span id ="errPassword"> 
+</span>
+</tr>
+<tr><td>Confirmpassword</td><td><input type ="password" id = "confirmpassword" name = "confirmpassword" </td></tr>
+<td>
+<span id ="Successmessage"></span>
+</td>
+<tr>
+<td> Gender </td>
+<td>
+<input type = "radio" id =" male" name = "gender" value ="male">Male
+<input type = "radio" id =" female" name = "gender" value ="male">Female
+<input type = "radio" id =" others" name = "gender" value ="male">Others
+</td>
+</tr>
+
+<tr>
+<td> Updates medium </td>
+<td>
+<input type = "checkbox" id =" updates1" name = "updates" value ="mobile">Mobile
+<input type = "checkbox" id =" updates2" name = "updates" value ="email">E-mail
+<input type = "checkbox" id ="updates3" name = "updates" value ="message">Message
+</td>
+</tr>
+
+
+<tr>
+<td>Deaprtment:</td>
+<td>
+<select id ="department " name = " deaprtment">
+<option value = "None" > ------------ </option>
+<option value = "HR" > HR </option>
+<option value = "Finance" > Finance </option>
+<option value = "Inventory" > Inventory </option>
+<option value = "Marketing" > Marketing </option>
+<option value = "Operations" > Operations </option>
+
+<tr>
+<td>Recent photograph</td>
+<td>
+<input type = "file"  id = "photo" name = "photo"
+</td>
+</tr>
+
+
+
+
+
+
+
+<tr><td align = "center"><input type ="submit" value ="signup" ></td><td align = "center"><input type = "reset" value ="clear"></td></tr>
+
+
+
+
+
+</table>
+
+</form> 
+</body>
+</html>
